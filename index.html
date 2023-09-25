@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karma Calculator according to Garuda Purana</title>
+    <style>
+        /* Styles for the container and overall layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+
+        /* Styles for questions and sliders */
+        .question {
+            margin-bottom: 15px;
+        }
+        .slider-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .slider {
+            width: 100%;
+        }
+
+        /* Styles for the button */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styles for the result section */
+        .result-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        #karmaScore {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        #afterlife {
+            font-size: 18px;
+            color: #333;
+        }
+        .result-image {
+            max-width: 100%;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Karma Calculator according to Garuda Purana</h1>
+        <p>Welcome to the Karma Calculator based on Garuda Purana. Your answers to the following questions will determine your afterlife destination.</p>
+        
+        <form id="karmaForm">
+            <!-- Questions and sliders go here -->
+            <!-- Example Question 1 -->
+            <div class="question">
+                <label class="slider-label">1. How often do you practice honesty?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q1">
+                <span id="q1Value">Never</span>
+            </div>
+            
+            <!-- Example Question 2 -->
+            <div class="question">
+                <label class="slider-label">2. How much do you donate to charity or help the needy?</label><br>
+                <input type="range" min="0" max="100" step="10" value="0" class="slider" id="q2">
+                <span id="q2Value">0%</span>
+            </div>
+
+            <!-- Add more questions here -->
+            <!-- Question 3 -->
+            <div class="question">
+                <label class="slider-label">3. How often do you help others in need?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q3">
+                <span id="q3Value">Never</span>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label class="slider-label">4. How often do you harm living creatures?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q4">
+                <span id="q4Value">Never</span>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label class="slider-label">5. How often do you practice non-violence?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q5">
+                <span id="q5Value">Never</span>
+            </div>
+
+                       <div class="question">
+                <label class="slider-label">6. How often do you indulge in lustful thoughts or actions?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q6">
+                <span id="q6Value">Never</span>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label class="slider-label">7. How often do you practice self-control?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q7">
+                <span id="q7Value">Never</span>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label class="slider-label">8. How often do you give in to greed?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q8">
+                <span id="q8Value">Never</span>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <label class="slider-label">9. How often do you speak ill of others?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q9">
+                <span id="q9Value">Never</span>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <label class="slider-label">10. How often do you practice patience?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q10">
+                <span id="q10Value">Never</span>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <label class="slider-label">11. How often do you harm the environment?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q11">
+                <span id="q11Value">Never</span>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <label class="slider-label">12. How often do you share your knowledge with others?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q12">
+                <span id="q12Value">Never</span>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <label class="slider-label">13. How often do you practice forgiveness?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q13">
+                <span id="q13Value">Never</span>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <label class="slider-label">14. How often do you harm yourself through unhealthy habits?</label><br>
+                <input type="range" min="0" max="5" step="1" value="0" class="slider" id="q14">
+                <span id="q14Value">Never</span>
+            </div>
+
+            <!-- Add more questions here -->
+
+            <div class="button-container">
+                <button type="button" onclick="calculateKarma()">Calculate Karma</button>
+            </div>
+        </form>
+        
+        <div id="result" class="result-container">
+            <h2>Your Karma Score:</h2>
+            <p id="karmaScore"></p>
+            <h2>Your Afterlife Destination:</h2>
+            <p id="afterlife"></p>
+            <img src="" alt="Afterlife Image" id="afterlifeImage" class="result-image">
+        </div>
+    </div>
+
+    <script>
+        function calculateKarma() {
+            // Get the values of the sliders and calculate karma score
+            const q1Value = parseInt(document.getElementById('q1').value);
+            const q2Value = parseInt(document.getElementById('q2').value);
+            const q3Value = parseInt(document.getElementById('q3').value);
+            const q4Value = parseInt(document.getElementById('q4').value);
+            const q5Value = parseInt(document.getElementById('q5').value);
+            const q6Value = parseInt(document.getElementById('q6').value);
+            const q7Value = parseInt(document.getElementById('q7').value);
+            const q8Value = parseInt(document.getElementById('q8').value);
+            const q9Value = parseInt(document.getElementById('q9').value);
+            const q10Value = parseInt(document.getElementById('q10').value);
+            const q11Value = parseInt(document.getElementById('q11').value);
+            const q12Value = parseInt(document.getElementById('q12').value);
+            const q13Value = parseInt(document.getElementById('q13').value);
+            const q14Value = parseInt(document.getElementById('q14').value);
+
+            // Define weights for each question (customize these weights)
+            const q1Weight = 10;
+            const q2Weight = 20;
+            const q3Weight = 15;
+            const q4Weight = -10;
+            const q5Weight = 10;
+            const q6Weight = -5;
+            const q7Weight = 10;
+            const q8Weight = -5;
+            const q9Weight = -5;
+            const q10Weight = 10;
+            const q11Weight = -10;
+            const q12Weight = 15;
+            const q13Weight = 10;
+            const q14Weight = -5;
+
+            // Calculate total karma score
+            const totalKarma =
+                (q1Value * q1Weight) + (q2Value * q2Weight) + (q3Value * q3Weight) +
+                (q4Value * q4Weight) + (q5Value * q5Weight) + (q6Value * q6Weight) +
+                (q7Value * q7Weight) + (q8Value * q8Weight) + (q9Value * q9Weight) +
+                (q10Value * q10Weight) + (q11Value * q11Weight) + (q12Value * q12Weight) +
+                (q13Value * q13Weight) + (q14Value * q14Weight);
+
+            // Determine afterlife destination and set image source (customize these values)
+            let afterlife = "";
+            let afterlifeImageSrc = "";
+
+            if (totalKarma >= 0) {
+                afterlife = "a beautiful paradise with celestial beings";
+                afterlifeImageSrc = "paradise.jpg"; // Replace with the actual image URL
+            } else {
+                afterlife = "a dark pit with fiery flames";
+                                afterlifeImageSrc = "hell.jpg"; // Replace with the actual image URL
+            }
+
+            // Display results
+            document.getElementById('karmaScore').textContent = totalKarma;
+            document.getElementById('afterlife').textContent = afterlife;
+            document.getElementById('afterlifeImage').src = afterlifeImageSrc;
+            document.getElementById('result').style.display = 'block';
+        }
+
+        // Slider label updates
+        const sliders = document.querySelectorAll('.slider');
+
+        sliders.forEach(slider => {
+            const sliderId = slider.id;
+            const valueSpan = document.getElementById(`${sliderId}Value`);
+
+            slider.addEventListener('input', () => {
+                valueSpan.textContent = getValueLabel(slider);
+            });
+        });
+
+        function getValueLabel(slider) {
+            const value = parseInt(slider.value);
+            const labels = ["Never", "Rarely", "Sometimes", "Often", "Always"];
+            return labels[value];
+        }
+    </script>
+</body>
+</html>
+
+
